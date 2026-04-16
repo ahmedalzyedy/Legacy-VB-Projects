@@ -1,0 +1,71 @@
+VERSION 5.00
+Begin VB.Form Form1 
+   Caption         =   "Form1"
+   ClientHeight    =   6075
+   ClientLeft      =   225
+   ClientTop       =   870
+   ClientWidth     =   14745
+   LinkTopic       =   "Form1"
+   ScaleHeight     =   6075
+   ScaleWidth      =   14745
+   StartUpPosition =   3  'Windows Default
+   Begin VB.TextBox Text1 
+      Height          =   495
+      Left            =   6720
+      TabIndex        =   1
+      Top             =   2040
+      Width           =   1215
+   End
+   Begin VB.ListBox List1 
+      Height          =   450
+      Left            =   6720
+      TabIndex        =   0
+      Top             =   2760
+      Width           =   1215
+   End
+   Begin VB.Menu „·› 
+      Caption         =   "&„·›"
+      Begin VB.Menu add 
+         Caption         =   "&«÷«›… «·∆ «·ﬁ«∆„…"
+      End
+      Begin VB.Menu addtext 
+         Caption         =   "&«÷«›… «·∆ „—»⁄ «·‰’"
+      End
+      Begin VB.Menu deleteall 
+         Caption         =   "&Õ–› «·ﬂ·"
+      End
+      Begin VB.Menu exit 
+         Caption         =   "&Œ—ÊÃ"
+      End
+   End
+End
+Attribute VB_Name = "Form1"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Private Sub add_Click()
+Dim inputdate As String
+inputdate = InputBox("«œŒ· »Ì«‰«  «·ﬁ«∆„… ÃœÌœ…:")
+If inputdate <> "" Then
+Me.List1.AddItem inputdate
+End If
+End Sub
+
+Private Sub addtext_Click()
+Dim inputtext As String
+inputtext = InputBox("«œŒ· «·‰’ «·„—«œ «÷«› Â")
+Me.Text1.Text = inputtext
+End Sub
+
+Private Sub deleteall_Click()
+Me.List1.Clear
+Me.Text1.Text = ""
+
+End Sub
+
+Private Sub exit_Click()
+If MsgBox("Â·  —Ìœ «·Œ—ÊÃø", vbYesNo + vbQuestion) = vbYes Then
+End
+End If
+End Sub
